@@ -26,7 +26,7 @@ porous_pavementUI <- function(id, label = "porous_pavement", html_req, surface_t
                                    conditionalPanel(condition = "input.prewet_time > 599", 
                                                     ns = ns, 
                                                     disabled(numericInput(ns("pw_rate"), "Rate (in/hr) based on Prewet Time", value = NA, min = 0))),
-                                   conditionalPanel(condition = "input.prewet_time < 599", 
+                                   conditionalPanel(condition = "input.prewet_time <= 599", 
                                                    ns = ns, 
                                                    selectInput(ns("weight"), "Mass of Water (lb)",
                                                                         choices = c("", 8.34, 41.7), selected = NULL),
